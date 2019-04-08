@@ -17,5 +17,7 @@ public class App {
     CeaserCipher myResult = new CeaserCipher();
     String result = myResult.encrypt(textInput,shiftKey);
     System.out.println("The encrypted text is: "+result);
+    String decryptResult = myResult.decrypt(textInput,shiftKey);
+    System.out.println("The decrypted text is: "+decryptResult);
     }
 }

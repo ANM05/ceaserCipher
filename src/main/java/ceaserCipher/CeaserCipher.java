@@ -36,4 +36,31 @@ public class CeaserCipher {
     public int getShift(){
         return mShift;
     }
+
+    public String decrypt(String textInput, int shiftKey) {
+        textInput = encrypt(textInput,shiftKey);
+        mShift = shiftKey;
+        String result = "";
+        for (int i = 0; i < textInput.length(); i++) {
+            char myChar = textInput.charAt(i);
+            if (Character.isUpperCase(textInput.charAt(i))) {
+                char shifted = (char) (myChar - mShift);
+                if (shifted > 'Z') {
+                    result += (char) (myChar - (26 - mShift));
+                } else {
+                    result += shifted;
+                }
+            } else {
+                char shifted = (char) (myChar - mShift);
+                if (shifted > 'z') {
+                    result += (char) (myChar - (26 - mShift));
+                } else
+                {
+                    result += shifted;
+                }
+            }
+
+        }
+        return result;
+    }
 }
