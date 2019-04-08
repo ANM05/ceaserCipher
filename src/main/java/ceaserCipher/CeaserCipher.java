@@ -45,21 +45,12 @@ public class CeaserCipher {
             char myChar = textInput.charAt(i);
             if (Character.isUpperCase(textInput.charAt(i))) {
                 char shifted = (char) (myChar - mShift);
-                if (shifted > 'Z') {
-                    result += (char) (myChar - (26 - mShift));
-                } else {
                     result += shifted;
-                }
-            } else {
-                char shifted = (char) (myChar - mShift);
-                if (shifted > 'z') {
-                    result += (char) (myChar - (26 - mShift));
-                } else
-                {
-                    result += shifted;
-                }
             }
-
+            else {
+                char shifted = (char) (myChar - mShift);
+                    result += shifted;
+            }
         }
         return result;
     }
