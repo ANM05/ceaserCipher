@@ -19,6 +19,6 @@ public class CeaserCipherTest{
     public void encrypt_encryptWithAShiftOf2_String(){
     CeaserCipher testCaesar = new CeaserCipher();
     testCaesar.encrypt("sample",2);
-    assertEquals("",testCaesar.encrypt("sample",2));
+    assertEquals("ucorng",testCaesar.encrypt("sample",2));
 }
 }
